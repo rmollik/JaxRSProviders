@@ -142,6 +142,13 @@ public abstract class JaxRSServerContainer extends AbstractRSAContainer {
 	protected String getServletAlias(RSARemoteServiceRegistration reg) {
 		String servletAliasPrefix = (this.servletPathPrefix == null || "".equals(this.servletPathPrefix)) ? SLASH
 				: this.servletPathPrefix;
+		if (reg.getProperty("ecf.jaxrs.jersey.server.alias") != null){
+			if (servletAliasPrefix.endsWith(SLASH)){
+				int servletAliasPrefixLength = servletAliasPrefix.length();
+				servletAliasPrefix = servletAliasPrefix.substring(servletAliasPrefixLength-1);
+			}
+			return servletAliasPrefix + reg.getProperty("ecf.jaxrs.jersey.server.alias");
+		}
 		if (!servletAliasPrefix.endsWith(SLASH))
 			servletAliasPrefix += SLASH;
 		return servletAliasPrefix + String.valueOf(reg.getServiceId());
@@ -228,6 +235,12 @@ public abstract class JaxRSServerContainer extends AbstractRSAContainer {
 						@Override
 						public void run() throws Exception {
 							httpService.unregister(servletAlias);
+						}
+
+						@Override
+						public void handleException(Throwable exception) {
+							// TODO Auto-generated method stub
+							
 						}
 					});
 				}

@@ -16,6 +16,7 @@ import javax.ws.rs.core.Configuration;
 
 import org.eclipse.ecf.core.ContainerTypeDescription;
 import org.eclipse.ecf.core.IContainer;
+import org.eclipse.ecf.core.identity.ID;
 import org.eclipse.ecf.core.util.ECFException;
 import org.eclipse.ecf.provider.jaxrs.JaxRSContainerInstantiator;
 import org.eclipse.ecf.provider.jaxrs.client.JaxRSClientContainer;
@@ -28,6 +29,11 @@ import org.eclipse.ecf.remoteservice.client.RemoteServiceClientRegistration;
 
 public class ResteasyClientContainer extends JaxRSClientContainer {
 
+	public ResteasyClientContainer(ID containerID, Configuration configuration, int jacksonPriority) {
+		super(containerID, configuration, jacksonPriority);
+		// TODO Auto-generated constructor stub
+	}
+
 	public static final String CONTAINER_TYPE_NAME = "ecf.container.client.resteasy";
 
 	public static class Instantiator extends JaxRSContainerInstantiator {
@@ -38,7 +44,8 @@ public class ResteasyClientContainer extends JaxRSClientContainer {
 		@Override
 		public IContainer createInstance(ContainerTypeDescription description, Map parameters,
 				Configuration configuration) {
-			return new ResteasyClientContainer();
+//			return new ResteasyClientContainer();
+			return new ResteasyClientContainer(null, configuration, 0);
 		}
 	}
 
@@ -69,7 +76,6 @@ public class ResteasyClientContainer extends JaxRSClientContainer {
 	@Override
 	protected IRemoteService createRemoteService(RemoteServiceClientRegistration registration) {
 		return new JaxRSClientRemoteService(this, registration) {
-			@Override
 			protected Object createJaxRSProxy(ClassLoader cl, @SuppressWarnings("rawtypes") Class interfaceClass,
 					WebTarget webTarget) throws ECFException {
 				Thread currentThread = Thread.currentThread();

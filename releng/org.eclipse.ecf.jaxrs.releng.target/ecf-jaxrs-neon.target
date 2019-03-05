@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="JaxRS Neon Target Platform" sequenceNumber="58">
+<?pde version="3.8"?><target name="JaxRS Neon Target Platform" sequenceNumber="161">
 <locations>
-<location path="${project_loc:org.eclipse.ecf.jaxrs.releng.target}/lib/cxf" type="Directory"/>
 <location path="${project_loc:org.eclipse.ecf.jaxrs.releng.target}/lib/validation" type="Directory"/>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.edit.ui.feature.group" version="2.12.0.v20160526-0356"/>
-<unit id="org.eclipse.emf.edit.ui.source.feature.group" version="2.12.0.v20160526-0356"/>
-<unit id="org.eclipse.pde.feature.group" version="3.12.0.v20160606-1100"/>
-<unit id="org.eclipse.pde.source.feature.group" version="3.12.0.v20160606-1100"/>
-<unit id="org.eclipse.platform.feature.group" version="4.6.0.v20160606-1342"/>
-<unit id="org.eclipse.platform.source.feature.group" version="4.6.0.v20160606-1342"/>
-<repository location="http://download.eclipse.org/releases/neon"/>
-</location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="com.fasterxml.jackson.core.jackson-core" version="2.6.2.v20161117-2150"/>
 <unit id="com.fasterxml.jackson.core.jackson-core.source" version="2.6.2.v20161117-2150"/>
@@ -47,33 +37,55 @@
 <repository location="http://download.eclipse.org/tools/orbit/R-builds/R20170516192513/repository"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.ecf.remoteservice.sdk.examples.feature.feature.group" version="1.0.0.v20170816-0237"/>
-<unit id="org.eclipse.ecf.remoteservice.sdk.examples.feature.source.feature.group" version="1.0.0.v20170816-0237"/>
-<unit id="org.eclipse.ecf.remoteservice.sdk.feature.feature.group" version="3.13.8.v20170816-0246"/>
-<unit id="org.eclipse.ecf.remoteservice.sdk.feature.source.feature.group" version="3.13.8.v20170816-0246"/>
-<repository location="http://download.eclipse.org/rt/ecf/3.13.8/site.p2"/>
+<unit id="org.eclipse.emf.edit.ui.feature.group" version="2.12.0.v20160526-0356"/>
+<unit id="org.eclipse.emf.edit.ui.source.feature.group" version="2.12.0.v20160526-0356"/>
+<unit id="org.eclipse.pde.feature.group" version="3.12.0.v20160606-1100"/>
+<unit id="org.eclipse.pde.source.feature.group" version="3.12.0.v20160606-1100"/>
+<unit id="org.eclipse.platform.feature.group" version="4.6.0.v20160606-1342"/>
+<unit id="org.eclipse.platform.source.feature.group" version="4.6.0.v20160606-1342"/>
+<repository location="http://download.eclipse.org/releases/neon"/>
 </location>
+<location path="${project_loc:org.eclipse.ecf.jaxrs.releng.target}/lib/jersey-2.28" type="Directory"/>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.ecf.remoteservice.sdk.examples.feature.feature.group" version="1.0.100.v20180730-2030"/>
+<unit id="org.eclipse.ecf.core.feature.group" version="3.14.4.v20181013-2146"/>
+<unit id="javax.servlet" version="3.1.0.v201410161800"/>
+<unit id="com.sun.syndication" version="0.9.0.v200803061811"/>
+<unit id="org.eclipse.ecf.remoteservice.sdk.feature.feature.group" version="3.14.4.v20181013-2143"/>
+<unit id="org.apache.hadoop.zookeeper" version="3.3.3.v201105210832"/>
+<unit id="org.json" version="1.0.0.v201011060100"/>
+<unit id="org.eclipse.ecf.core.source.feature.group" version="3.14.4.v20181013-2146"/>
+<unit id="org.eclipse.ecf.remoteservice.sdk.feature.source.feature.group" version="3.14.4.v20181013-2143"/>
+<unit id="org.eclipse.ecf.remoteservice.sdk.examples.feature.source.feature.group" version="1.0.100.v20180730-2030"/>
+<unit id="org.jdom" version="1.1.1.v201101151400"/>
+<unit id="org.xbill.dns" version="2.0.8.v201112050911"/>
+<unit id="org.apache.log4j" version="1.2.15.v201012070815"/>
+<unit id="org.objectweb.asm" version="6.1.1.v20180414-0329"/>
+<repository location="http://download.eclipse.org/rt/ecf/3.14.4/site.p2"/>
+</location>
+<location path="${project_loc:org.eclipse.ecf.jaxrs.releng.target}/lib/apache" type="Directory"/>
 </locations>
 <includeBundles>
 <plugin id="ch.ethz.iks.slp"/>
 <plugin id="ch.ethz.iks.slp.source"/>
-<plugin id="com.fasterxml.jackson.core.jackson-annotations"/>
-<plugin id="com.fasterxml.jackson.core.jackson-core"/>
+<plugin id="com.fasterxml.jackson.core.jackson-annotations" version="2.9.8"/>
+<plugin id="com.fasterxml.jackson.core.jackson-core" version="2.9.8"/>
 <plugin id="com.fasterxml.jackson.core.jackson-core.source"/>
-<plugin id="com.fasterxml.jackson.core.jackson-databind"/>
-<plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-base"/>
+<plugin id="com.fasterxml.jackson.core.jackson-databind" version="2.9.8"/>
+<plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-base" version="2.9.8"/>
 <plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-base.source"/>
-<plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider"/>
+<plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" version="2.9.8"/>
 <plugin id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.source"/>
-<plugin id="com.ibm.icu"/>
-<plugin id="com.ibm.icu.source"/>
-<plugin id="com.jcraft.jsch"/>
-<plugin id="com.jcraft.jsch.source"/>
+<plugin id="com.fasterxml.jackson.module.jackson-module-jaxb-annotations"/>
+<plugin id="com.ibm.icu" version="56.1.0.v201601250100"/>
+<plugin id="com.ibm.icu.source" version="56.1.0.v201601250100"/>
+<plugin id="com.jcraft.jsch" version="0.1.53.v201508180515"/>
+<plugin id="com.jcraft.jsch.source" version="0.1.53.v201508180515"/>
 <plugin id="com.sun.el"/>
 <plugin id="com.sun.el.source"/>
-<plugin id="javassist"/>
-<plugin id="javax.annotation" version="1.2.0.v201602091430"/>
-<plugin id="javax.annotation.source" version="1.2.0.v201602091430"/>
+<plugin id="jakarta.annotation-api"/>
+<plugin id="jakarta.ws.rs-api"/>
+<plugin id="javassist" version="3.24.1.GA"/>
 <plugin id="javax.el"/>
 <plugin id="javax.el.source"/>
 <plugin id="javax.inject" version="1.0.0.v20091030"/>
@@ -83,27 +95,23 @@
 <plugin id="javax.servlet.jsp"/>
 <plugin id="javax.servlet.jsp.source"/>
 <plugin id="javax.servlet.source" version="3.1.0.v201410161800"/>
-<plugin id="javax.validation.api"/>
+<plugin id="javax.validation.api" version="2.0.1.Final"/>
 <plugin id="javax.ws.rs"/>
 <plugin id="javax.xml" version="1.3.4.v201005080400"/>
 <plugin id="org.aopalliance"/>
-<plugin id="org.apache.ant"/>
-<plugin id="org.apache.ant.source"/>
-<plugin id="org.apache.batik.css"/>
-<plugin id="org.apache.batik.css.source"/>
-<plugin id="org.apache.batik.util"/>
-<plugin id="org.apache.batik.util.gui"/>
-<plugin id="org.apache.batik.util.gui.source"/>
-<plugin id="org.apache.batik.util.source"/>
-<plugin id="org.apache.commons.codec" version="1.9.0.v20170208-1614"/>
-<plugin id="org.apache.commons.jxpath"/>
-<plugin id="org.apache.commons.jxpath.source"/>
-<plugin id="org.apache.commons.logging" version="1.1.1.v201101211721"/>
-<plugin id="org.apache.commons.logging.source" version="1.1.1.v201101211721"/>
-<plugin id="org.apache.cxf.cxf-core"/>
-<plugin id="org.apache.cxf.cxf-rt-frontend-jaxrs"/>
-<plugin id="org.apache.cxf.cxf-rt-rs-client"/>
-<plugin id="org.apache.cxf.cxf-rt-transports-http"/>
+<plugin id="org.apache.ant" version="1.9.6.v201510161327"/>
+<plugin id="org.apache.ant.source" version="1.9.6.v201510161327"/>
+<plugin id="org.apache.batik.css" version="1.7.0.v201011041433"/>
+<plugin id="org.apache.batik.css.source" version="1.7.0.v201011041433"/>
+<plugin id="org.apache.batik.util" version="1.7.0.v201011041433"/>
+<plugin id="org.apache.batik.util.gui" version="1.7.0.v200903091627"/>
+<plugin id="org.apache.batik.util.gui.source" version="1.7.0.v200903091627"/>
+<plugin id="org.apache.batik.util.source" version="1.7.0.v201011041433"/>
+<plugin id="org.apache.commons.codec" version="1.10.0.v20180409-1845"/>
+<plugin id="org.apache.commons.jxpath" version="1.3.0.v200911051830"/>
+<plugin id="org.apache.commons.jxpath.source" version="1.3.0.v200911051830"/>
+<plugin id="org.apache.commons.logging" version="1.2.0.v20180409-1502"/>
+<plugin id="org.apache.commons.logging.source" version="1.2.0.v20180409-1502"/>
 <plugin id="org.apache.felix.gogo.command" version="0.10.0.v201209301215"/>
 <plugin id="org.apache.felix.gogo.command.source" version="0.10.0.v201209301215"/>
 <plugin id="org.apache.felix.gogo.runtime" version="0.10.0.v201209301036"/>
@@ -112,8 +120,10 @@
 <plugin id="org.apache.felix.gogo.shell.source"/>
 <plugin id="org.apache.hadoop.zookeeper"/>
 <plugin id="org.apache.hadoop.zookeeper.source"/>
-<plugin id="org.apache.httpcomponents.httpclient" version="4.5.2.v20170210-0925"/>
-<plugin id="org.apache.httpcomponents.httpcore" version="4.4.6.v20170210-0925"/>
+<plugin id="org.apache.httpcomponents.httpclient" version="4.5.5.v20180409-1525"/>
+<plugin id="org.apache.httpcomponents.httpclient.source" version="4.5.5.v20180409-1525"/>
+<plugin id="org.apache.httpcomponents.httpcore" version="4.4.9.v20180409-1525"/>
+<plugin id="org.apache.httpcomponents.httpcore.source" version="4.4.9.v20180409-1525"/>
 <plugin id="org.apache.jasper.glassfish"/>
 <plugin id="org.apache.jasper.glassfish.source"/>
 <plugin id="org.apache.log4j"/>
@@ -122,126 +132,192 @@
 <plugin id="org.apache.lucene.analysis.source"/>
 <plugin id="org.apache.lucene.core"/>
 <plugin id="org.apache.lucene.core.source"/>
-<plugin id="org.apache.ws.xmlschema.core"/>
 <plugin id="org.codehaus.jackson.core"/>
 <plugin id="org.codehaus.jackson.core.source"/>
 <plugin id="org.codehaus.jackson.jaxrs"/>
 <plugin id="org.codehaus.jackson.jaxrs.source"/>
 <plugin id="org.codehaus.jackson.mapper"/>
-<plugin id="org.eclipse.ant.core"/>
-<plugin id="org.eclipse.ant.core.source"/>
-<plugin id="org.eclipse.ant.launching"/>
-<plugin id="org.eclipse.ant.ui"/>
-<plugin id="org.eclipse.compare"/>
-<plugin id="org.eclipse.compare.core"/>
-<plugin id="org.eclipse.compare.core.source"/>
-<plugin id="org.eclipse.compare.source"/>
+<plugin id="org.eclipse.ant.core" version="3.4.100.v20160505-0642"/>
+<plugin id="org.eclipse.ant.core.source" version="3.4.100.v20160505-0642"/>
+<plugin id="org.eclipse.ant.launching" version="1.1.201.v20161115-1135"/>
+<plugin id="org.eclipse.ant.ui" version="3.6.201.v20161115-1135"/>
+<plugin id="org.eclipse.compare" version="3.6.0.v20160418-1534"/>
+<plugin id="org.eclipse.compare.core" version="3.6.0.v20160418-1534"/>
+<plugin id="org.eclipse.compare.core.source" version="3.6.0.v20160418-1534"/>
+<plugin id="org.eclipse.compare.source" version="3.6.0.v20160418-1534"/>
 <plugin id="org.eclipse.compare.win32"/>
 <plugin id="org.eclipse.compare.win32.source"/>
-<plugin id="org.eclipse.core.commands"/>
-<plugin id="org.eclipse.core.commands.source"/>
+<plugin id="org.eclipse.core.commands" version="3.8.0.v20160316-1921"/>
+<plugin id="org.eclipse.core.commands.source" version="3.8.0.v20160316-1921"/>
 <plugin id="org.eclipse.core.contenttype" version="3.5.100.v20160418-1621"/>
 <plugin id="org.eclipse.core.contenttype.source" version="3.5.100.v20160418-1621"/>
-<plugin id="org.eclipse.core.databinding"/>
+<plugin id="org.eclipse.core.databinding" version="1.6.0.v20160412-0910"/>
 <plugin id="org.eclipse.core.databinding.beans"/>
 <plugin id="org.eclipse.core.databinding.beans.source"/>
-<plugin id="org.eclipse.core.databinding.observable"/>
-<plugin id="org.eclipse.core.databinding.observable.source"/>
-<plugin id="org.eclipse.core.databinding.property"/>
-<plugin id="org.eclipse.core.databinding.property.source"/>
-<plugin id="org.eclipse.core.databinding.source"/>
-<plugin id="org.eclipse.core.expressions"/>
-<plugin id="org.eclipse.core.expressions.source"/>
-<plugin id="org.eclipse.core.externaltools"/>
-<plugin id="org.eclipse.core.externaltools.source"/>
-<plugin id="org.eclipse.core.filebuffers"/>
-<plugin id="org.eclipse.core.filebuffers.source"/>
-<plugin id="org.eclipse.core.filesystem"/>
-<plugin id="org.eclipse.core.filesystem.source"/>
+<plugin id="org.eclipse.core.databinding.observable" version="1.6.0.v20160511-1747"/>
+<plugin id="org.eclipse.core.databinding.observable.source" version="1.6.0.v20160511-1747"/>
+<plugin id="org.eclipse.core.databinding.property" version="1.6.0.v20160427-0852"/>
+<plugin id="org.eclipse.core.databinding.property.source" version="1.6.0.v20160427-0852"/>
+<plugin id="org.eclipse.core.databinding.source" version="1.6.0.v20160412-0910"/>
+<plugin id="org.eclipse.core.expressions" version="3.5.100.v20160418-1621"/>
+<plugin id="org.eclipse.core.expressions.source" version="3.5.100.v20160418-1621"/>
+<plugin id="org.eclipse.core.externaltools" version="1.0.400.v20160509-1057"/>
+<plugin id="org.eclipse.core.externaltools.source" version="1.0.400.v20160509-1057"/>
+<plugin id="org.eclipse.core.filebuffers" version="3.6.0.v20160503-1849"/>
+<plugin id="org.eclipse.core.filebuffers.source" version="3.6.0.v20160503-1849"/>
+<plugin id="org.eclipse.core.filesystem" version="1.6.0.v20160503-1608"/>
+<plugin id="org.eclipse.core.filesystem.source" version="1.6.0.v20160503-1608"/>
 <plugin id="org.eclipse.core.filesystem.win32.x86_64"/>
 <plugin id="org.eclipse.core.jobs" version="3.8.0.v20160509-0411"/>
 <plugin id="org.eclipse.core.jobs.source" version="3.8.0.v20160509-0411"/>
 <plugin id="org.eclipse.core.net"/>
 <plugin id="org.eclipse.core.net.source"/>
 <plugin id="org.eclipse.core.net.win32.x86_64"/>
-<plugin id="org.eclipse.core.resources"/>
-<plugin id="org.eclipse.core.resources.source"/>
+<plugin id="org.eclipse.core.resources" version="3.11.0.v20160503-1608"/>
+<plugin id="org.eclipse.core.resources.source" version="3.11.0.v20160503-1608"/>
 <plugin id="org.eclipse.core.resources.win32.x86_64"/>
 <plugin id="org.eclipse.core.runtime" version="3.12.0.v20160606-1342"/>
 <plugin id="org.eclipse.core.runtime.source" version="3.12.0.v20160606-1342"/>
-<plugin id="org.eclipse.core.variables"/>
-<plugin id="org.eclipse.core.variables.source"/>
-<plugin id="org.eclipse.debug.core"/>
-<plugin id="org.eclipse.debug.core.source"/>
-<plugin id="org.eclipse.debug.ui"/>
-<plugin id="org.eclipse.debug.ui.source"/>
-<plugin id="org.eclipse.e4.core.commands"/>
-<plugin id="org.eclipse.e4.core.commands.source"/>
-<plugin id="org.eclipse.e4.core.contexts"/>
-<plugin id="org.eclipse.e4.core.contexts.source"/>
-<plugin id="org.eclipse.e4.core.di"/>
-<plugin id="org.eclipse.e4.core.di.annotations"/>
-<plugin id="org.eclipse.e4.core.di.annotations.source"/>
-<plugin id="org.eclipse.e4.core.di.extensions"/>
-<plugin id="org.eclipse.e4.core.di.extensions.source"/>
-<plugin id="org.eclipse.e4.core.di.source"/>
-<plugin id="org.eclipse.e4.core.services"/>
-<plugin id="org.eclipse.e4.core.services.source"/>
-<plugin id="org.eclipse.e4.emf.xpath"/>
-<plugin id="org.eclipse.e4.emf.xpath.source"/>
-<plugin id="org.eclipse.e4.ui.bindings"/>
-<plugin id="org.eclipse.e4.ui.bindings.source"/>
-<plugin id="org.eclipse.e4.ui.css.core"/>
-<plugin id="org.eclipse.e4.ui.css.core.source"/>
-<plugin id="org.eclipse.e4.ui.css.swt"/>
-<plugin id="org.eclipse.e4.ui.css.swt.source"/>
-<plugin id="org.eclipse.e4.ui.css.swt.theme"/>
-<plugin id="org.eclipse.e4.ui.css.swt.theme.source"/>
-<plugin id="org.eclipse.e4.ui.di"/>
-<plugin id="org.eclipse.e4.ui.di.source"/>
+<plugin id="org.eclipse.core.variables" version="3.3.0.v20160419-1720"/>
+<plugin id="org.eclipse.core.variables.source" version="3.3.0.v20160419-1720"/>
+<plugin id="org.eclipse.debug.core" version="3.10.100.v20160419-1720"/>
+<plugin id="org.eclipse.debug.core.source" version="3.10.100.v20160419-1720"/>
+<plugin id="org.eclipse.debug.ui" version="3.11.200.v20160518-1858"/>
+<plugin id="org.eclipse.debug.ui.source" version="3.11.200.v20160518-1858"/>
+<plugin id="org.eclipse.e4.core.commands" version="0.11.100.v20160506-0804"/>
+<plugin id="org.eclipse.e4.core.commands.source" version="0.11.100.v20160506-0804"/>
+<plugin id="org.eclipse.e4.core.contexts" version="1.5.0.v20160504-0909"/>
+<plugin id="org.eclipse.e4.core.contexts.source" version="1.5.0.v20160504-0909"/>
+<plugin id="org.eclipse.e4.core.di" version="1.6.0.v20160319-0612"/>
+<plugin id="org.eclipse.e4.core.di.annotations" version="1.5.0.v20151127-1241"/>
+<plugin id="org.eclipse.e4.core.di.annotations.source" version="1.5.0.v20151127-1241"/>
+<plugin id="org.eclipse.e4.core.di.extensions" version="0.14.0.v20160211-1614"/>
+<plugin id="org.eclipse.e4.core.di.extensions.source" version="0.14.0.v20160211-1614"/>
+<plugin id="org.eclipse.e4.core.di.source" version="1.6.0.v20160319-0612"/>
+<plugin id="org.eclipse.e4.core.services" version="2.0.100.v20160509-1032"/>
+<plugin id="org.eclipse.e4.core.services.source" version="2.0.100.v20160509-1032"/>
+<plugin id="org.eclipse.e4.emf.xpath" version="0.1.200.v20160506-0804"/>
+<plugin id="org.eclipse.e4.emf.xpath.source" version="0.1.200.v20160506-0804"/>
+<plugin id="org.eclipse.e4.ui.bindings" version="0.11.100.v20160509-1025"/>
+<plugin id="org.eclipse.e4.ui.bindings.source" version="0.11.100.v20160509-1025"/>
+<plugin id="org.eclipse.e4.ui.css.core" version="0.12.0.v20160505-1310"/>
+<plugin id="org.eclipse.e4.ui.css.core.source" version="0.12.0.v20160505-1310"/>
+<plugin id="org.eclipse.e4.ui.css.swt" version="0.12.100.v20160517-1505"/>
+<plugin id="org.eclipse.e4.ui.css.swt.source" version="0.12.100.v20160517-1505"/>
+<plugin id="org.eclipse.e4.ui.css.swt.theme" version="0.10.100.v20160523-0836"/>
+<plugin id="org.eclipse.e4.ui.css.swt.theme.source" version="0.10.100.v20160523-0836"/>
+<plugin id="org.eclipse.e4.ui.di" version="1.1.100.v20160506-0759"/>
+<plugin id="org.eclipse.e4.ui.di.source" version="1.1.100.v20160506-0759"/>
 <plugin id="org.eclipse.e4.ui.dialogs"/>
 <plugin id="org.eclipse.e4.ui.dialogs.source"/>
-<plugin id="org.eclipse.e4.ui.model.workbench"/>
-<plugin id="org.eclipse.e4.ui.model.workbench.source"/>
-<plugin id="org.eclipse.e4.ui.services"/>
-<plugin id="org.eclipse.e4.ui.services.source"/>
-<plugin id="org.eclipse.e4.ui.widgets"/>
-<plugin id="org.eclipse.e4.ui.widgets.source"/>
-<plugin id="org.eclipse.e4.ui.workbench"/>
-<plugin id="org.eclipse.e4.ui.workbench.addons.swt"/>
-<plugin id="org.eclipse.e4.ui.workbench.addons.swt.source"/>
-<plugin id="org.eclipse.e4.ui.workbench.renderers.swt"/>
-<plugin id="org.eclipse.e4.ui.workbench.renderers.swt.source"/>
-<plugin id="org.eclipse.e4.ui.workbench.source"/>
-<plugin id="org.eclipse.e4.ui.workbench.swt"/>
-<plugin id="org.eclipse.e4.ui.workbench.swt.source"/>
-<plugin id="org.eclipse.e4.ui.workbench3"/>
-<plugin id="org.eclipse.e4.ui.workbench3.source"/>
-<plugin id="org.eclipse.ecf" version="3.8.0.v20170104-0657"/>
+<plugin id="org.eclipse.e4.ui.model.workbench" version="1.2.0.v20160229-1459"/>
+<plugin id="org.eclipse.e4.ui.model.workbench.source" version="1.2.0.v20160229-1459"/>
+<plugin id="org.eclipse.e4.ui.services" version="1.2.100.v20160506-0759"/>
+<plugin id="org.eclipse.e4.ui.services.source" version="1.2.100.v20160506-0759"/>
+<plugin id="org.eclipse.e4.ui.widgets" version="1.1.100.v20160506-0759"/>
+<plugin id="org.eclipse.e4.ui.widgets.source" version="1.1.100.v20160506-0759"/>
+<plugin id="org.eclipse.e4.ui.workbench" version="1.4.0.v20160517-1624"/>
+<plugin id="org.eclipse.e4.ui.workbench.addons.swt" version="1.2.100.v20160506-0759"/>
+<plugin id="org.eclipse.e4.ui.workbench.addons.swt.source" version="1.2.100.v20160506-0759"/>
+<plugin id="org.eclipse.e4.ui.workbench.renderers.swt" version="0.14.0.v20160525-0940"/>
+<plugin id="org.eclipse.e4.ui.workbench.renderers.swt.source" version="0.14.0.v20160525-0940"/>
+<plugin id="org.eclipse.e4.ui.workbench.source" version="1.4.0.v20160517-1624"/>
+<plugin id="org.eclipse.e4.ui.workbench.swt" version="0.14.0.v20160523-1900"/>
+<plugin id="org.eclipse.e4.ui.workbench.swt.source" version="0.14.0.v20160523-1900"/>
+<plugin id="org.eclipse.e4.ui.workbench3" version="0.13.100.v20160506-0759"/>
+<plugin id="org.eclipse.e4.ui.workbench3.source" version="0.13.100.v20160506-0759"/>
+<plugin id="org.eclipse.ecf" version="3.9.3.v20181012-2016"/>
+<plugin id="org.eclipse.ecf.console"/>
+<plugin id="org.eclipse.ecf.console.source"/>
+<plugin id="org.eclipse.ecf.datashare"/>
+<plugin id="org.eclipse.ecf.datashare.source"/>
 <plugin id="org.eclipse.ecf.discovery"/>
 <plugin id="org.eclipse.ecf.discovery.source"/>
-<plugin id="org.eclipse.ecf.filetransfer"/>
-<plugin id="org.eclipse.ecf.identity" version="3.8.0.v20161203-2153"/>
+<plugin id="org.eclipse.ecf.discovery.ui"/>
+<plugin id="org.eclipse.ecf.discovery.ui.browser"/>
+<plugin id="org.eclipse.ecf.discovery.ui.browser.source"/>
+<plugin id="org.eclipse.ecf.discovery.ui.edit"/>
+<plugin id="org.eclipse.ecf.discovery.ui.edit.source"/>
+<plugin id="org.eclipse.ecf.discovery.ui.model"/>
+<plugin id="org.eclipse.ecf.discovery.ui.model.source"/>
+<plugin id="org.eclipse.ecf.discovery.ui.properties"/>
+<plugin id="org.eclipse.ecf.discovery.ui.properties.source"/>
+<plugin id="org.eclipse.ecf.discovery.ui.properties.tabbed"/>
+<plugin id="org.eclipse.ecf.discovery.ui.properties.tabbed.source"/>
+<plugin id="org.eclipse.ecf.discovery.ui.source"/>
+<plugin id="org.eclipse.ecf.discovery.ui.userinput"/>
+<plugin id="org.eclipse.ecf.discovery.ui.userinput.source"/>
+<plugin id="org.eclipse.ecf.doc"/>
+<plugin id="org.eclipse.ecf.doc.source"/>
+<plugin id="org.eclipse.ecf.example.clients"/>
+<plugin id="org.eclipse.ecf.example.clients.source"/>
+<plugin id="org.eclipse.ecf.example.collab"/>
+<plugin id="org.eclipse.ecf.example.collab.source"/>
+<plugin id="org.eclipse.ecf.examples.eventadmin.app"/>
+<plugin id="org.eclipse.ecf.examples.eventadmin.app.source"/>
+<plugin id="org.eclipse.ecf.filetransfer" version="5.0.100.v20180301-0132"/>
+<plugin id="org.eclipse.ecf.filetransfer.source" version="5.0.100.v20180301-0132"/>
+<plugin id="org.eclipse.ecf.filetransfer.ui"/>
+<plugin id="org.eclipse.ecf.filetransfer.ui.source"/>
+<plugin id="org.eclipse.ecf.identity" version="3.9.1.v20180810-0833"/>
+<plugin id="org.eclipse.ecf.identity.source" version="3.9.1.v20180810-0833"/>
 <plugin id="org.eclipse.ecf.osgi.services.distribution"/>
 <plugin id="org.eclipse.ecf.osgi.services.distribution.source"/>
 <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin"/>
+<plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.console"/>
+<plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.console.source"/>
 <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.proxy"/>
 <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.proxy.source"/>
 <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.source"/>
+<plugin id="org.eclipse.ecf.presence"/>
+<plugin id="org.eclipse.ecf.presence.bot"/>
+<plugin id="org.eclipse.ecf.presence.bot.source"/>
+<plugin id="org.eclipse.ecf.presence.source"/>
+<plugin id="org.eclipse.ecf.presence.ui"/>
+<plugin id="org.eclipse.ecf.presence.ui.source"/>
+<plugin id="org.eclipse.ecf.protocol.bittorrent"/>
+<plugin id="org.eclipse.ecf.protocol.bittorrent.source"/>
+<plugin id="org.eclipse.ecf.protocol.msn"/>
+<plugin id="org.eclipse.ecf.protocol.msn.source"/>
 <plugin id="org.eclipse.ecf.provider"/>
-<plugin id="org.eclipse.ecf.provider.filetransfer"/>
+<plugin id="org.eclipse.ecf.provider.bittorrent"/>
+<plugin id="org.eclipse.ecf.provider.bittorrent.source"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer" version="3.2.400.v20180306-0429"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer.efs"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer.efs.source"/>
 <plugin id="org.eclipse.ecf.provider.filetransfer.httpclient4"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer.httpclient4.source"/>
 <plugin id="org.eclipse.ecf.provider.filetransfer.httpclient4.ssl"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer.httpclient4.ssl.source"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer.scp"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer.scp.source"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer.source" version="3.2.400.v20180306-0429"/>
 <plugin id="org.eclipse.ecf.provider.filetransfer.ssl"/>
+<plugin id="org.eclipse.ecf.provider.filetransfer.ssl.source"/>
+<plugin id="org.eclipse.ecf.provider.irc"/>
+<plugin id="org.eclipse.ecf.provider.irc.source"/>
+<plugin id="org.eclipse.ecf.provider.irc.ui"/>
+<plugin id="org.eclipse.ecf.provider.irc.ui.source"/>
 <plugin id="org.eclipse.ecf.provider.jmdns"/>
 <plugin id="org.eclipse.ecf.provider.jmdns.source"/>
+<plugin id="org.eclipse.ecf.provider.jslp"/>
+<plugin id="org.eclipse.ecf.provider.jslp.source"/>
+<plugin id="org.eclipse.ecf.provider.msn"/>
+<plugin id="org.eclipse.ecf.provider.msn.source"/>
+<plugin id="org.eclipse.ecf.provider.r_osgi"/>
+<plugin id="org.eclipse.ecf.provider.r_osgi.source"/>
 <plugin id="org.eclipse.ecf.provider.remoteservice"/>
 <plugin id="org.eclipse.ecf.provider.remoteservice.source"/>
 <plugin id="org.eclipse.ecf.provider.source"/>
+<plugin id="org.eclipse.ecf.provider.xmpp"/>
+<plugin id="org.eclipse.ecf.provider.xmpp.source"/>
+<plugin id="org.eclipse.ecf.provider.xmpp.ui"/>
+<plugin id="org.eclipse.ecf.provider.xmpp.ui.source"/>
+<plugin id="org.eclipse.ecf.provider.zookeeper"/>
+<plugin id="org.eclipse.ecf.provider.zookeeper.source"/>
 <plugin id="org.eclipse.ecf.remoteservice"/>
-<plugin id="org.eclipse.ecf.remoteservice.asyncproxy" version="2.0.100.v20160907-0906"/>
-<plugin id="org.eclipse.ecf.remoteservice.asyncproxy.source" version="1.0.100.v20160907-0906"/>
-<plugin id="org.eclipse.ecf.remoteservice.asyncproxy.source" version="2.0.100.v20160907-0906"/>
+<plugin id="org.eclipse.ecf.remoteservice.asyncproxy" version="2.1.0.v20180409-2248"/>
+<plugin id="org.eclipse.ecf.remoteservice.asyncproxy.source" version="2.1.0.v20180409-2248"/>
 <plugin id="org.eclipse.ecf.remoteservice.eventadmin"/>
 <plugin id="org.eclipse.ecf.remoteservice.eventadmin.source"/>
 <plugin id="org.eclipse.ecf.remoteservice.rest"/>
@@ -249,38 +325,56 @@
 <plugin id="org.eclipse.ecf.remoteservice.servlet"/>
 <plugin id="org.eclipse.ecf.remoteservice.servlet.source"/>
 <plugin id="org.eclipse.ecf.remoteservice.source"/>
+<plugin id="org.eclipse.ecf.remoteservice.ui"/>
+<plugin id="org.eclipse.ecf.remoteservice.ui.source"/>
+<plugin id="org.eclipse.ecf.remoteservices.tooling.pde"/>
+<plugin id="org.eclipse.ecf.remoteservices.tooling.pde.source"/>
 <plugin id="org.eclipse.ecf.server"/>
 <plugin id="org.eclipse.ecf.server.generic"/>
 <plugin id="org.eclipse.ecf.server.generic.source"/>
 <plugin id="org.eclipse.ecf.server.source"/>
 <plugin id="org.eclipse.ecf.sharedobject"/>
 <plugin id="org.eclipse.ecf.sharedobject.source"/>
+<plugin id="org.eclipse.ecf.source" version="3.9.3.v20181012-2016"/>
 <plugin id="org.eclipse.ecf.ssl"/>
-<plugin id="org.eclipse.emf.common"/>
-<plugin id="org.eclipse.emf.common.ui"/>
-<plugin id="org.eclipse.emf.ecore"/>
-<plugin id="org.eclipse.emf.ecore.change"/>
-<plugin id="org.eclipse.emf.ecore.xmi"/>
-<plugin id="org.eclipse.emf.edit"/>
-<plugin id="org.eclipse.emf.edit.ui"/>
-<plugin id="org.eclipse.emf.edit.ui.source"/>
+<plugin id="org.eclipse.ecf.ssl.source"/>
+<plugin id="org.eclipse.ecf.storage"/>
+<plugin id="org.eclipse.ecf.storage.source"/>
+<plugin id="org.eclipse.ecf.sync"/>
+<plugin id="org.eclipse.ecf.sync.source"/>
+<plugin id="org.eclipse.ecf.telephony.call"/>
+<plugin id="org.eclipse.ecf.telephony.call.source"/>
+<plugin id="org.eclipse.ecf.telephony.call.ui"/>
+<plugin id="org.eclipse.ecf.telephony.call.ui.source"/>
+<plugin id="org.eclipse.ecf.ui"/>
+<plugin id="org.eclipse.ecf.ui.capabilities"/>
+<plugin id="org.eclipse.ecf.ui.capabilities.source"/>
+<plugin id="org.eclipse.ecf.ui.source"/>
+<plugin id="org.eclipse.emf.common" version="2.12.0.v20160420-0247"/>
+<plugin id="org.eclipse.emf.common.ui" version="2.11.0.v20160526-0356"/>
+<plugin id="org.eclipse.emf.ecore" version="2.12.0.v20160420-0247"/>
+<plugin id="org.eclipse.emf.ecore.change" version="2.11.0.v20160420-0247"/>
+<plugin id="org.eclipse.emf.ecore.xmi" version="2.12.0.v20160420-0247"/>
+<plugin id="org.eclipse.emf.edit" version="2.12.0.v20160526-0356"/>
+<plugin id="org.eclipse.emf.edit.ui" version="2.12.0.v20160526-0356"/>
+<plugin id="org.eclipse.emf.edit.ui.source" version="2.12.0.v20160526-0356"/>
 <plugin id="org.eclipse.equinox.app" version="1.3.400.v20150715-1528"/>
 <plugin id="org.eclipse.equinox.app.source" version="1.3.400.v20150715-1528"/>
-<plugin id="org.eclipse.equinox.bidi"/>
-<plugin id="org.eclipse.equinox.bidi.source"/>
+<plugin id="org.eclipse.equinox.bidi" version="1.0.0.v20160307-1318"/>
+<plugin id="org.eclipse.equinox.bidi.source" version="1.0.0.v20160307-1318"/>
 <plugin id="org.eclipse.equinox.common" version="3.8.0.v20160509-1230"/>
 <plugin id="org.eclipse.equinox.common.source" version="3.8.0.v20160509-1230"/>
 <plugin id="org.eclipse.equinox.concurrent" version="1.1.0.v20130327-1442"/>
 <plugin id="org.eclipse.equinox.console"/>
 <plugin id="org.eclipse.equinox.console.source"/>
-<plugin id="org.eclipse.equinox.ds"/>
-<plugin id="org.eclipse.equinox.ds.source"/>
+<plugin id="org.eclipse.equinox.ds" version="1.4.400.v20160226-2036"/>
+<plugin id="org.eclipse.equinox.ds.source" version="1.4.400.v20160226-2036"/>
 <plugin id="org.eclipse.equinox.event"/>
 <plugin id="org.eclipse.equinox.event.source"/>
-<plugin id="org.eclipse.equinox.frameworkadmin"/>
-<plugin id="org.eclipse.equinox.frameworkadmin.equinox"/>
-<plugin id="org.eclipse.equinox.frameworkadmin.equinox.source"/>
-<plugin id="org.eclipse.equinox.frameworkadmin.source"/>
+<plugin id="org.eclipse.equinox.frameworkadmin" version="2.0.300.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.frameworkadmin.equinox" version="1.0.700.v20160102-2223"/>
+<plugin id="org.eclipse.equinox.frameworkadmin.equinox.source" version="1.0.700.v20160102-2223"/>
+<plugin id="org.eclipse.equinox.frameworkadmin.source" version="2.0.300.v20160504-1450"/>
 <plugin id="org.eclipse.equinox.http.jetty"/>
 <plugin id="org.eclipse.equinox.http.jetty.source"/>
 <plugin id="org.eclipse.equinox.http.registry"/>
@@ -294,56 +388,56 @@
 <plugin id="org.eclipse.equinox.launcher"/>
 <plugin id="org.eclipse.equinox.launcher.source"/>
 <plugin id="org.eclipse.equinox.launcher.win32.win32.x86_64"/>
-<plugin id="org.eclipse.equinox.p2.artifact.repository"/>
-<plugin id="org.eclipse.equinox.p2.artifact.repository.source"/>
+<plugin id="org.eclipse.equinox.p2.artifact.repository" version="1.1.500.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.artifact.repository.source" version="1.1.500.v20160419-0834"/>
 <plugin id="org.eclipse.equinox.p2.console"/>
 <plugin id="org.eclipse.equinox.p2.console.source"/>
-<plugin id="org.eclipse.equinox.p2.core"/>
-<plugin id="org.eclipse.equinox.p2.core.source"/>
-<plugin id="org.eclipse.equinox.p2.director"/>
-<plugin id="org.eclipse.equinox.p2.director.app"/>
-<plugin id="org.eclipse.equinox.p2.director.app.source"/>
-<plugin id="org.eclipse.equinox.p2.director.source"/>
+<plugin id="org.eclipse.equinox.p2.core" version="2.4.100.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.core.source" version="2.4.100.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.director" version="2.3.300.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.director.app" version="1.0.500.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.director.app.source" version="1.0.500.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.director.source" version="2.3.300.v20160504-1450"/>
 <plugin id="org.eclipse.equinox.p2.directorywatcher"/>
 <plugin id="org.eclipse.equinox.p2.directorywatcher.source"/>
-<plugin id="org.eclipse.equinox.p2.engine"/>
-<plugin id="org.eclipse.equinox.p2.engine.source"/>
+<plugin id="org.eclipse.equinox.p2.engine" version="2.4.100.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.engine.source" version="2.4.100.v20160419-0834"/>
 <plugin id="org.eclipse.equinox.p2.extensionlocation"/>
 <plugin id="org.eclipse.equinox.p2.extensionlocation.source"/>
-<plugin id="org.eclipse.equinox.p2.garbagecollector"/>
-<plugin id="org.eclipse.equinox.p2.garbagecollector.source"/>
-<plugin id="org.eclipse.equinox.p2.jarprocessor"/>
-<plugin id="org.eclipse.equinox.p2.jarprocessor.source"/>
-<plugin id="org.eclipse.equinox.p2.metadata"/>
-<plugin id="org.eclipse.equinox.p2.metadata.repository"/>
-<plugin id="org.eclipse.equinox.p2.metadata.repository.source"/>
-<plugin id="org.eclipse.equinox.p2.metadata.source"/>
-<plugin id="org.eclipse.equinox.p2.operations"/>
-<plugin id="org.eclipse.equinox.p2.operations.source"/>
-<plugin id="org.eclipse.equinox.p2.publisher"/>
-<plugin id="org.eclipse.equinox.p2.publisher.eclipse"/>
-<plugin id="org.eclipse.equinox.p2.publisher.eclipse.source"/>
-<plugin id="org.eclipse.equinox.p2.publisher.source"/>
+<plugin id="org.eclipse.equinox.p2.garbagecollector" version="1.0.300.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.garbagecollector.source" version="1.0.300.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.jarprocessor" version="1.0.500.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.jarprocessor.source" version="1.0.500.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.metadata" version="2.3.100.v20160427-2220"/>
+<plugin id="org.eclipse.equinox.p2.metadata.repository" version="1.2.300.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.metadata.repository.source" version="1.2.300.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.metadata.source" version="2.3.100.v20160427-2220"/>
+<plugin id="org.eclipse.equinox.p2.operations" version="2.4.200.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.operations.source" version="2.4.200.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.publisher" version="1.4.100.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.publisher.eclipse" version="1.2.100.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.publisher.eclipse.source" version="1.2.100.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.p2.publisher.source" version="1.4.100.v20160504-1450"/>
 <plugin id="org.eclipse.equinox.p2.reconciler.dropins"/>
 <plugin id="org.eclipse.equinox.p2.reconciler.dropins.source"/>
-<plugin id="org.eclipse.equinox.p2.repository"/>
-<plugin id="org.eclipse.equinox.p2.repository.source"/>
-<plugin id="org.eclipse.equinox.p2.repository.tools"/>
-<plugin id="org.eclipse.equinox.p2.repository.tools.source"/>
-<plugin id="org.eclipse.equinox.p2.touchpoint.eclipse"/>
-<plugin id="org.eclipse.equinox.p2.touchpoint.eclipse.source"/>
+<plugin id="org.eclipse.equinox.p2.repository" version="2.3.200.v20160421-0324"/>
+<plugin id="org.eclipse.equinox.p2.repository.source" version="2.3.200.v20160421-0324"/>
+<plugin id="org.eclipse.equinox.p2.repository.tools" version="2.1.300.v20160421-0324"/>
+<plugin id="org.eclipse.equinox.p2.repository.tools.source" version="2.1.300.v20160421-0324"/>
+<plugin id="org.eclipse.equinox.p2.touchpoint.eclipse" version="2.1.400.v20160419-0834"/>
+<plugin id="org.eclipse.equinox.p2.touchpoint.eclipse.source" version="2.1.400.v20160419-0834"/>
 <plugin id="org.eclipse.equinox.p2.touchpoint.natives"/>
 <plugin id="org.eclipse.equinox.p2.touchpoint.natives.source"/>
 <plugin id="org.eclipse.equinox.p2.transport.ecf"/>
 <plugin id="org.eclipse.equinox.p2.transport.ecf.source"/>
-<plugin id="org.eclipse.equinox.p2.ui"/>
+<plugin id="org.eclipse.equinox.p2.ui" version="2.4.100.v20160419-0834"/>
 <plugin id="org.eclipse.equinox.p2.ui.importexport"/>
 <plugin id="org.eclipse.equinox.p2.ui.importexport.source"/>
 <plugin id="org.eclipse.equinox.p2.ui.sdk"/>
 <plugin id="org.eclipse.equinox.p2.ui.sdk.scheduler"/>
 <plugin id="org.eclipse.equinox.p2.ui.sdk.scheduler.source"/>
 <plugin id="org.eclipse.equinox.p2.ui.sdk.source"/>
-<plugin id="org.eclipse.equinox.p2.ui.source"/>
+<plugin id="org.eclipse.equinox.p2.ui.source" version="2.4.100.v20160419-0834"/>
 <plugin id="org.eclipse.equinox.p2.updatechecker"/>
 <plugin id="org.eclipse.equinox.p2.updatechecker.source"/>
 <plugin id="org.eclipse.equinox.p2.updatesite"/>
@@ -352,45 +446,45 @@
 <plugin id="org.eclipse.equinox.preferences.source" version="3.6.0.v20160120-1756"/>
 <plugin id="org.eclipse.equinox.registry" version="3.6.100.v20160223-2218"/>
 <plugin id="org.eclipse.equinox.registry.source" version="3.6.100.v20160223-2218"/>
-<plugin id="org.eclipse.equinox.security"/>
-<plugin id="org.eclipse.equinox.security.source"/>
-<plugin id="org.eclipse.equinox.security.ui"/>
-<plugin id="org.eclipse.equinox.security.ui.source"/>
+<plugin id="org.eclipse.equinox.security" version="1.2.200.v20150715-1528"/>
+<plugin id="org.eclipse.equinox.security.source" version="1.2.200.v20150715-1528"/>
+<plugin id="org.eclipse.equinox.security.ui" version="1.1.300.v20150803-1225"/>
+<plugin id="org.eclipse.equinox.security.ui.source" version="1.1.300.v20150803-1225"/>
 <plugin id="org.eclipse.equinox.security.win32.x86_64"/>
 <plugin id="org.eclipse.equinox.security.win32.x86_64.source"/>
-<plugin id="org.eclipse.equinox.simpleconfigurator"/>
-<plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
-<plugin id="org.eclipse.equinox.simpleconfigurator.manipulator.source"/>
-<plugin id="org.eclipse.equinox.simpleconfigurator.source"/>
-<plugin id="org.eclipse.equinox.util"/>
-<plugin id="org.eclipse.equinox.util.source"/>
-<plugin id="org.eclipse.help"/>
+<plugin id="org.eclipse.equinox.simpleconfigurator" version="1.1.200.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.simpleconfigurator.manipulator" version="2.0.200.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.simpleconfigurator.manipulator.source" version="2.0.200.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.simpleconfigurator.source" version="1.1.200.v20160504-1450"/>
+<plugin id="org.eclipse.equinox.util" version="1.0.500.v20130404-1337"/>
+<plugin id="org.eclipse.equinox.util.source" version="1.0.500.v20130404-1337"/>
+<plugin id="org.eclipse.help" version="3.7.0.v20160602-1307"/>
 <plugin id="org.eclipse.help.base"/>
 <plugin id="org.eclipse.help.base.source"/>
-<plugin id="org.eclipse.help.source"/>
+<plugin id="org.eclipse.help.source" version="3.7.0.v20160602-1307"/>
 <plugin id="org.eclipse.help.ui"/>
 <plugin id="org.eclipse.help.ui.source"/>
 <plugin id="org.eclipse.help.webapp"/>
 <plugin id="org.eclipse.help.webapp.source"/>
 <plugin id="org.eclipse.jdt"/>
-<plugin id="org.eclipse.jdt.annotation" version="2.1.0.v20160418-1457"/>
 <plugin id="org.eclipse.jdt.annotation" version="1.1.100.v20160418-1457"/>
+<plugin id="org.eclipse.jdt.annotation" version="2.1.0.v20160418-1457"/>
 <plugin id="org.eclipse.jdt.apt.core"/>
 <plugin id="org.eclipse.jdt.apt.pluggable.core"/>
 <plugin id="org.eclipse.jdt.apt.ui"/>
 <plugin id="org.eclipse.jdt.compiler.apt"/>
 <plugin id="org.eclipse.jdt.compiler.tool"/>
-<plugin id="org.eclipse.jdt.core"/>
-<plugin id="org.eclipse.jdt.core.manipulation"/>
-<plugin id="org.eclipse.jdt.debug"/>
-<plugin id="org.eclipse.jdt.debug.ui"/>
+<plugin id="org.eclipse.jdt.core" version="3.12.3.v20170228-1205"/>
+<plugin id="org.eclipse.jdt.core.manipulation" version="1.7.0.v20160419-0705"/>
+<plugin id="org.eclipse.jdt.debug" version="3.10.1.v20160811-0441"/>
+<plugin id="org.eclipse.jdt.debug.ui" version="3.7.201.v20160811-0450"/>
 <plugin id="org.eclipse.jdt.doc.user"/>
-<plugin id="org.eclipse.jdt.junit"/>
-<plugin id="org.eclipse.jdt.junit.core"/>
-<plugin id="org.eclipse.jdt.junit.runtime"/>
+<plugin id="org.eclipse.jdt.junit" version="3.9.0.v20160421-1701"/>
+<plugin id="org.eclipse.jdt.junit.core" version="3.8.0.v20160421-1701"/>
+<plugin id="org.eclipse.jdt.junit.runtime" version="3.4.600.v20160505-0715"/>
 <plugin id="org.eclipse.jdt.junit4.runtime"/>
-<plugin id="org.eclipse.jdt.launching"/>
-<plugin id="org.eclipse.jdt.ui"/>
+<plugin id="org.eclipse.jdt.launching" version="3.8.101.v20161111-2014"/>
+<plugin id="org.eclipse.jdt.ui" version="3.12.2.v20160929-0804"/>
 <plugin id="org.eclipse.jetty.continuation"/>
 <plugin id="org.eclipse.jetty.continuation.source"/>
 <plugin id="org.eclipse.jetty.http"/>
@@ -405,20 +499,20 @@
 <plugin id="org.eclipse.jetty.servlet.source"/>
 <plugin id="org.eclipse.jetty.util"/>
 <plugin id="org.eclipse.jetty.util.source"/>
-<plugin id="org.eclipse.jface"/>
-<plugin id="org.eclipse.jface.databinding"/>
-<plugin id="org.eclipse.jface.databinding.source"/>
-<plugin id="org.eclipse.jface.source"/>
-<plugin id="org.eclipse.jface.text"/>
-<plugin id="org.eclipse.jface.text.source"/>
+<plugin id="org.eclipse.jface" version="3.12.0.v20160518-1929"/>
+<plugin id="org.eclipse.jface.databinding" version="1.8.0.v20160420-2231"/>
+<plugin id="org.eclipse.jface.databinding.source" version="1.8.0.v20160420-2231"/>
+<plugin id="org.eclipse.jface.source" version="3.12.0.v20160518-1929"/>
+<plugin id="org.eclipse.jface.text" version="3.11.0.v20160505-1301"/>
+<plugin id="org.eclipse.jface.text.source" version="3.11.0.v20160505-1301"/>
 <plugin id="org.eclipse.jsch.core"/>
 <plugin id="org.eclipse.jsch.core.source"/>
 <plugin id="org.eclipse.jsch.ui"/>
 <plugin id="org.eclipse.jsch.ui.source"/>
-<plugin id="org.eclipse.ltk.core.refactoring"/>
-<plugin id="org.eclipse.ltk.core.refactoring.source"/>
-<plugin id="org.eclipse.ltk.ui.refactoring"/>
-<plugin id="org.eclipse.ltk.ui.refactoring.source"/>
+<plugin id="org.eclipse.ltk.core.refactoring" version="3.7.0.v20160419-0705"/>
+<plugin id="org.eclipse.ltk.core.refactoring.source" version="3.7.0.v20160419-0705"/>
+<plugin id="org.eclipse.ltk.ui.refactoring" version="3.8.0.v20160518-1817"/>
+<plugin id="org.eclipse.ltk.ui.refactoring.source" version="3.8.0.v20160518-1817"/>
 <plugin id="org.eclipse.osgi" version="3.11.0.v20160603-1336"/>
 <plugin id="org.eclipse.osgi.compatibility.state"/>
 <plugin id="org.eclipse.osgi.compatibility.state.source"/>
@@ -427,8 +521,8 @@
 <plugin id="org.eclipse.osgi.services.remoteserviceadmin.source"/>
 <plugin id="org.eclipse.osgi.services.source" version="3.5.100.v20160504-1419"/>
 <plugin id="org.eclipse.osgi.source" version="3.11.0.v20160603-1336"/>
-<plugin id="org.eclipse.osgi.util"/>
-<plugin id="org.eclipse.osgi.util.source"/>
+<plugin id="org.eclipse.osgi.util" version="3.4.0.v20170111-1608"/>
+<plugin id="org.eclipse.osgi.util.source" version="3.3.100.v20150423-1351"/>
 <plugin id="org.eclipse.pde"/>
 <plugin id="org.eclipse.pde.api.tools"/>
 <plugin id="org.eclipse.pde.api.tools.annotations"/>
@@ -436,10 +530,10 @@
 <plugin id="org.eclipse.pde.api.tools.source"/>
 <plugin id="org.eclipse.pde.api.tools.ui"/>
 <plugin id="org.eclipse.pde.api.tools.ui.source"/>
-<plugin id="org.eclipse.pde.build"/>
-<plugin id="org.eclipse.pde.build.source"/>
-<plugin id="org.eclipse.pde.core"/>
-<plugin id="org.eclipse.pde.core.source"/>
+<plugin id="org.eclipse.pde.build" version="3.9.200.v20160204-0642"/>
+<plugin id="org.eclipse.pde.build.source" version="3.9.200.v20160204-0642"/>
+<plugin id="org.eclipse.pde.core" version="3.11.0.v20160510-1223"/>
+<plugin id="org.eclipse.pde.core.source" version="3.11.0.v20160510-1223"/>
 <plugin id="org.eclipse.pde.doc.user"/>
 <plugin id="org.eclipse.pde.ds.annotations"/>
 <plugin id="org.eclipse.pde.ds.annotations.source"/>
@@ -449,16 +543,16 @@
 <plugin id="org.eclipse.pde.ds.ui.source"/>
 <plugin id="org.eclipse.pde.junit.runtime"/>
 <plugin id="org.eclipse.pde.junit.runtime.source"/>
-<plugin id="org.eclipse.pde.launching"/>
-<plugin id="org.eclipse.pde.launching.source"/>
+<plugin id="org.eclipse.pde.launching" version="3.6.400.v20160121-1248"/>
+<plugin id="org.eclipse.pde.launching.source" version="3.6.400.v20160121-1248"/>
 <plugin id="org.eclipse.pde.runtime"/>
 <plugin id="org.eclipse.pde.runtime.source"/>
 <plugin id="org.eclipse.pde.ua.core"/>
 <plugin id="org.eclipse.pde.ua.core.source"/>
 <plugin id="org.eclipse.pde.ua.ui"/>
 <plugin id="org.eclipse.pde.ua.ui.source"/>
-<plugin id="org.eclipse.pde.ui"/>
-<plugin id="org.eclipse.pde.ui.source"/>
+<plugin id="org.eclipse.pde.ui" version="3.9.0.v20160525-1830"/>
+<plugin id="org.eclipse.pde.ui.source" version="3.9.0.v20160525-1830"/>
 <plugin id="org.eclipse.pde.ui.templates"/>
 <plugin id="org.eclipse.pde.ui.templates.source"/>
 <plugin id="org.eclipse.platform"/>
@@ -466,106 +560,103 @@
 <plugin id="org.eclipse.platform.doc.user"/>
 <plugin id="org.eclipse.platform.source"/>
 <plugin id="org.eclipse.rcp"/>
-<plugin id="org.eclipse.search"/>
-<plugin id="org.eclipse.search.source"/>
-<plugin id="org.eclipse.swt"/>
-<plugin id="org.eclipse.swt.win32.win32.x86_64"/>
-<plugin id="org.eclipse.swt.win32.win32.x86_64.source"/>
-<plugin id="org.eclipse.team.core"/>
-<plugin id="org.eclipse.team.core.source"/>
-<plugin id="org.eclipse.team.ui"/>
-<plugin id="org.eclipse.team.ui.source"/>
-<plugin id="org.eclipse.text"/>
-<plugin id="org.eclipse.text.source"/>
-<plugin id="org.eclipse.ui"/>
+<plugin id="org.eclipse.search" version="3.11.0.v20160519-1501"/>
+<plugin id="org.eclipse.search.source" version="3.11.0.v20160519-1501"/>
+<plugin id="org.eclipse.swt" version="3.105.0.v20160603-0902"/>
+<plugin id="org.eclipse.swt.win32.win32.x86_64" version="3.105.0.v20160603-0902"/>
+<plugin id="org.eclipse.swt.win32.win32.x86_64.source" version="3.105.0.v20160603-0902"/>
+<plugin id="org.eclipse.team.core" version="3.8.0.v20160418-1534"/>
+<plugin id="org.eclipse.team.core.source" version="3.8.0.v20160418-1534"/>
+<plugin id="org.eclipse.team.ecf.core"/>
+<plugin id="org.eclipse.team.ecf.core.source"/>
+<plugin id="org.eclipse.team.ecf.ui"/>
+<plugin id="org.eclipse.team.ecf.ui.source"/>
+<plugin id="org.eclipse.team.ui" version="3.8.0.v20160518-1906"/>
+<plugin id="org.eclipse.team.ui.source" version="3.8.0.v20160518-1906"/>
+<plugin id="org.eclipse.text" version="3.6.0.v20160503-1849"/>
+<plugin id="org.eclipse.text.source" version="3.6.0.v20160503-1849"/>
+<plugin id="org.eclipse.ui" version="3.108.0.v20160518-1929"/>
 <plugin id="org.eclipse.ui.browser"/>
 <plugin id="org.eclipse.ui.browser.source"/>
-<plugin id="org.eclipse.ui.cheatsheets"/>
-<plugin id="org.eclipse.ui.cheatsheets.source"/>
-<plugin id="org.eclipse.ui.console"/>
-<plugin id="org.eclipse.ui.console.source"/>
-<plugin id="org.eclipse.ui.editors"/>
-<plugin id="org.eclipse.ui.editors.source"/>
-<plugin id="org.eclipse.ui.externaltools"/>
-<plugin id="org.eclipse.ui.externaltools.source"/>
-<plugin id="org.eclipse.ui.forms"/>
-<plugin id="org.eclipse.ui.forms.source"/>
-<plugin id="org.eclipse.ui.ide"/>
+<plugin id="org.eclipse.ui.cheatsheets" version="3.5.0.v20160504-0839"/>
+<plugin id="org.eclipse.ui.cheatsheets.source" version="3.5.0.v20160504-0839"/>
+<plugin id="org.eclipse.ui.console" version="3.6.200.v20160518-1858"/>
+<plugin id="org.eclipse.ui.console.source" version="3.6.200.v20160518-1858"/>
+<plugin id="org.eclipse.ui.editors" version="3.10.0.v20160505-0931"/>
+<plugin id="org.eclipse.ui.editors.source" version="3.10.0.v20160505-0931"/>
+<plugin id="org.eclipse.ui.externaltools" version="3.3.100.v20160518-1858"/>
+<plugin id="org.eclipse.ui.externaltools.source" version="3.3.100.v20160518-1858"/>
+<plugin id="org.eclipse.ui.forms" version="3.7.0.v20160518-1929"/>
+<plugin id="org.eclipse.ui.forms.source" version="3.7.0.v20160518-1929"/>
+<plugin id="org.eclipse.ui.ide" version="3.12.0.v20160601-1609"/>
 <plugin id="org.eclipse.ui.ide.application"/>
 <plugin id="org.eclipse.ui.ide.application.source"/>
-<plugin id="org.eclipse.ui.ide.source"/>
-<plugin id="org.eclipse.ui.intro"/>
-<plugin id="org.eclipse.ui.intro.quicklinks"/>
-<plugin id="org.eclipse.ui.intro.quicklinks.source"/>
-<plugin id="org.eclipse.ui.intro.source"/>
-<plugin id="org.eclipse.ui.intro.universal"/>
-<plugin id="org.eclipse.ui.intro.universal.source"/>
+<plugin id="org.eclipse.ui.ide.source" version="3.12.0.v20160601-1609"/>
+<plugin id="org.eclipse.ui.intro" version="3.5.0.v20160509-1548"/>
+<plugin id="org.eclipse.ui.intro.quicklinks" version="1.0.0.v20160515-0255"/>
+<plugin id="org.eclipse.ui.intro.quicklinks.source" version="1.0.0.v20160515-0255"/>
+<plugin id="org.eclipse.ui.intro.source" version="3.5.0.v20160509-1548"/>
+<plugin id="org.eclipse.ui.intro.universal" version="3.3.0.v20160519-1604"/>
+<plugin id="org.eclipse.ui.intro.universal.source" version="3.3.0.v20160519-1604"/>
 <plugin id="org.eclipse.ui.monitoring"/>
 <plugin id="org.eclipse.ui.monitoring.source"/>
-<plugin id="org.eclipse.ui.navigator"/>
-<plugin id="org.eclipse.ui.navigator.resources"/>
-<plugin id="org.eclipse.ui.navigator.resources.source"/>
-<plugin id="org.eclipse.ui.navigator.source"/>
+<plugin id="org.eclipse.ui.navigator" version="3.6.100.v20160518-1929"/>
+<plugin id="org.eclipse.ui.navigator.resources" version="3.5.100.v20160518-1929"/>
+<plugin id="org.eclipse.ui.navigator.resources.source" version="3.5.100.v20160518-1929"/>
+<plugin id="org.eclipse.ui.navigator.source" version="3.6.100.v20160518-1929"/>
 <plugin id="org.eclipse.ui.net"/>
 <plugin id="org.eclipse.ui.net.source"/>
-<plugin id="org.eclipse.ui.source"/>
+<plugin id="org.eclipse.ui.source" version="3.108.0.v20160518-1929"/>
 <plugin id="org.eclipse.ui.themes"/>
 <plugin id="org.eclipse.ui.themes.source"/>
-<plugin id="org.eclipse.ui.trace"/>
-<plugin id="org.eclipse.ui.trace.source"/>
-<plugin id="org.eclipse.ui.views"/>
-<plugin id="org.eclipse.ui.views.log"/>
-<plugin id="org.eclipse.ui.views.log.source"/>
-<plugin id="org.eclipse.ui.views.properties.tabbed"/>
-<plugin id="org.eclipse.ui.views.properties.tabbed.source"/>
-<plugin id="org.eclipse.ui.views.source"/>
+<plugin id="org.eclipse.ui.trace" version="1.0.400.v20160509-1055"/>
+<plugin id="org.eclipse.ui.trace.source" version="1.0.400.v20160509-1055"/>
+<plugin id="org.eclipse.ui.views" version="3.8.100.v20160518-1929"/>
+<plugin id="org.eclipse.ui.views.log" version="1.2.0.v20160418-1724"/>
+<plugin id="org.eclipse.ui.views.log.source" version="1.2.0.v20160418-1724"/>
+<plugin id="org.eclipse.ui.views.properties.tabbed" version="3.7.0.v20160310-0903"/>
+<plugin id="org.eclipse.ui.views.properties.tabbed.source" version="3.7.0.v20160310-0903"/>
+<plugin id="org.eclipse.ui.views.source" version="3.8.100.v20160518-1929"/>
 <plugin id="org.eclipse.ui.win32"/>
 <plugin id="org.eclipse.ui.win32.source"/>
-<plugin id="org.eclipse.ui.workbench"/>
-<plugin id="org.eclipse.ui.workbench.source"/>
-<plugin id="org.eclipse.ui.workbench.texteditor"/>
-<plugin id="org.eclipse.ui.workbench.texteditor.source"/>
-<plugin id="org.eclipse.update.configurator"/>
-<plugin id="org.eclipse.update.configurator.source"/>
-<plugin id="org.glassfish.hk2.api"/>
-<plugin id="org.glassfish.hk2.locator"/>
-<plugin id="org.glassfish.hk2.osgi-resource-locator"/>
-<plugin id="org.glassfish.hk2.utils"/>
-<plugin id="org.glassfish.jersey.apache.connector"/>
-<plugin id="org.glassfish.jersey.apache.connector.source"/>
-<plugin id="org.glassfish.jersey.bundles.repackaged.jersey-guava"/>
-<plugin id="org.glassfish.jersey.bundles.repackaged.jersey-guava.source"/>
-<plugin id="org.glassfish.jersey.containers.servlet"/>
-<plugin id="org.glassfish.jersey.containers.servlet.core"/>
-<plugin id="org.glassfish.jersey.containers.servlet.core.source"/>
-<plugin id="org.glassfish.jersey.containers.servlet.source"/>
-<plugin id="org.glassfish.jersey.core.jersey-client"/>
-<plugin id="org.glassfish.jersey.core.jersey-client.source"/>
-<plugin id="org.glassfish.jersey.core.jersey-common"/>
-<plugin id="org.glassfish.jersey.core.jersey-common.source"/>
-<plugin id="org.glassfish.jersey.core.jersey-server"/>
-<plugin id="org.glassfish.jersey.core.jersey-server.source"/>
-<plugin id="org.glassfish.jersey.ext.entityfiltering"/>
-<plugin id="org.glassfish.jersey.ext.entityfiltering.source"/>
-<plugin id="org.glassfish.jersey.media.jersey-media-json-jackson"/>
-<plugin id="org.glassfish.jersey.media.jersey-media-json-jackson.source"/>
-<plugin id="org.hamcrest.core"/>
+<plugin id="org.eclipse.ui.workbench" version="3.108.0.v20160602-1232"/>
+<plugin id="org.eclipse.ui.workbench.source" version="3.108.0.v20160602-1232"/>
+<plugin id="org.eclipse.ui.workbench.texteditor" version="3.10.0.v20160530-2011"/>
+<plugin id="org.eclipse.ui.workbench.texteditor.source" version="3.10.0.v20160530-2011"/>
+<plugin id="org.eclipse.update.configurator" version="3.3.400.v20160506-0750"/>
+<plugin id="org.eclipse.update.configurator.source" version="3.3.400.v20160506-0750"/>
+<plugin id="org.glassfish.hk2.api" version="2.5.0"/>
+<plugin id="org.glassfish.hk2.external.aopalliance-repackaged"/>
+<plugin id="org.glassfish.hk2.external.jakarta.inject"/>
+<plugin id="org.glassfish.hk2.locator" version="2.5.0"/>
+<plugin id="org.glassfish.hk2.osgi-resource-locator" version="1.0.1"/>
+<plugin id="org.glassfish.hk2.utils" version="2.5.0"/>
+<plugin id="org.glassfish.jersey.containers.jersey-container-servlet"/>
+<plugin id="org.glassfish.jersey.containers.jersey-container-servlet-core"/>
+<plugin id="org.glassfish.jersey.core.jersey-client" version="2.28.0"/>
+<plugin id="org.glassfish.jersey.core.jersey-common" version="2.28.0"/>
+<plugin id="org.glassfish.jersey.core.jersey-server" version="2.28.0"/>
+<plugin id="org.glassfish.jersey.ext.jersey-entity-filtering"/>
+<plugin id="org.glassfish.jersey.inject.jersey-hk2"/>
+<plugin id="org.glassfish.jersey.media.jersey-media-jaxb"/>
+<plugin id="org.glassfish.jersey.media.jersey-media-json-jackson" version="2.28.0"/>
+<plugin id="org.hamcrest.core" version="1.3.0.v201303031735"/>
 <plugin id="org.json"/>
-<plugin id="org.junit"/>
+<plugin id="org.junit" version="4.12.0.v201504281640"/>
 <plugin id="org.objectweb.asm" version="5.0.1.v201404251740"/>
 <plugin id="org.objectweb.asm.source" version="5.0.1.v201404251740"/>
 <plugin id="org.objectweb.asm.tree.source"/>
-<plugin id="org.sat4j.core"/>
-<plugin id="org.sat4j.pb"/>
-<plugin id="org.tukaani.xz"/>
-<plugin id="org.tukaani.xz.source"/>
-<plugin id="org.w3c.css.sac"/>
-<plugin id="org.w3c.css.sac.source"/>
-<plugin id="org.w3c.dom.events"/>
-<plugin id="org.w3c.dom.events.source"/>
-<plugin id="org.w3c.dom.smil"/>
-<plugin id="org.w3c.dom.smil.source"/>
-<plugin id="org.w3c.dom.svg"/>
-<plugin id="org.w3c.dom.svg.source"/>
+<plugin id="org.sat4j.core" version="2.3.5.v201308161310"/>
+<plugin id="org.sat4j.pb" version="2.3.5.v201404071733"/>
+<plugin id="org.tukaani.xz" version="1.3.0.v201308270617"/>
+<plugin id="org.tukaani.xz.source" version="1.3.0.v201308270617"/>
+<plugin id="org.w3c.css.sac" version="1.3.1.v200903091627"/>
+<plugin id="org.w3c.css.sac.source" version="1.3.1.v200903091627"/>
+<plugin id="org.w3c.dom.events" version="3.0.0.draft20060413_v201105210656"/>
+<plugin id="org.w3c.dom.events.source" version="3.0.0.draft20060413_v201105210656"/>
+<plugin id="org.w3c.dom.smil" version="1.0.1.v200903091627"/>
+<plugin id="org.w3c.dom.smil.source" version="1.0.1.v200903091627"/>
+<plugin id="org.w3c.dom.svg" version="1.1.0.v201011041433"/>
+<plugin id="org.w3c.dom.svg.source" version="1.1.0.v201011041433"/>
 </includeBundles>
 </target>
