@@ -37,7 +37,7 @@ import org.osgi.util.tracker.ServiceTracker;
 public abstract class JaxRSServerContainer extends AbstractRSAContainer {
 
 	public static final Long HTTPSERVICE_START_TIMEOUT = Long
-			.valueOf(System.getProperty(JaxRSServerContainer.class.getName() + ".httpservice.timeout", "30000"));
+			.valueOf(System.getProperty(JaxRSServerContainer.class.getName() + ".httpservice.timeout", /*"30000"*/ "60000"));
 
 	public static final String SERVLET_PROPERTIES_PARAM = ".servletProperties"; // expected
 																				// value
@@ -125,9 +125,10 @@ public abstract class JaxRSServerContainer extends AbstractRSAContainer {
 			HttpService result = null;
 			try {
 				result = this.httpServiceTracker.waitForService(HTTPSERVICE_START_TIMEOUT);
-				if (result == null)
+				if (result == null){
 					throw new TimeoutException(
 							"Timed out waiting " + String.valueOf(HTTPSERVICE_START_TIMEOUT) + "ms for HttpService");
+				}
 			} catch (InterruptedException | TimeoutException e) {
 				throw new RuntimeException(
 						"Could not find instance of HttpService for JaxRSServerContainer.getHttpService()", e);
@@ -142,13 +143,24 @@ public abstract class JaxRSServerContainer extends AbstractRSAContainer {
 	protected String getServletAlias(RSARemoteServiceRegistration reg) {
 		String servletAliasPrefix = (this.servletPathPrefix == null || "".equals(this.servletPathPrefix)) ? SLASH
 				: this.servletPathPrefix;
-		if (reg.getProperty("ecf.jaxrs.jersey.server.alias") != null){
-			if (servletAliasPrefix.endsWith(SLASH)){
-				int servletAliasPrefixLength = servletAliasPrefix.length();
-				servletAliasPrefix = servletAliasPrefix.substring(servletAliasPrefixLength-1);
+		String serverAlias = (String)reg.getProperty("ecf.jaxrs.jersey.server.alias");
+		if (serverAlias != null){
+			if (serverAlias.equals("*")){
+				serverAlias = "";
+			} else {
+				if (servletAliasPrefix.endsWith(SLASH) && serverAlias.startsWith(SLASH)){
+					serverAlias = serverAlias.substring(1);
+				} else if (!serverAlias.startsWith(SLASH)){
+					serverAlias = SLASH + serverAlias;
+				}
 			}
-			return servletAliasPrefix + reg.getProperty("ecf.jaxrs.jersey.server.alias");
+			String alias = servletAliasPrefix + serverAlias;
+			if (alias.endsWith(SLASH)){
+				alias = alias.substring(0, alias.length()-1);
+			}
+			return alias;
 		}
+		
 		if (!servletAliasPrefix.endsWith(SLASH))
 			servletAliasPrefix += SLASH;
 		return servletAliasPrefix + String.valueOf(reg.getServiceId());
@@ -189,9 +201,13 @@ public abstract class JaxRSServerContainer extends AbstractRSAContainer {
 		// Fix for https://github.com/ECF/JaxRSProviders/issues/10
 		String suffix = "";
 		// If there is some path then
-		if (!"".equals(path) && servletAlias.startsWith(path)) {
-			// Then if the servletAlias starts with, then we remove
-			suffix = servletAlias.substring(path.length());
+		if (!"".equals(path)) {
+			if (servletAlias.startsWith(path)){
+				// Then if the servletAlias starts with, then we remove
+				suffix = servletAlias.substring(path.length());
+			} else if (path.equals(servletAlias + SLASH)) {
+				return ourURI.toString().substring(0, ourURI.toString().length()-1);
+			}
 		} else
 			// otherwise we use the servletAlias unmodified
 			suffix = servletAlias;
