@@ -14,15 +14,14 @@
 -Declipse.ignoreApp=true 
 -Dosgi.noShutdown=true 
 -Dorg.eclipse.osbp.ecview.jetty.contextpath=/demokisselapplication 
--Dorg.eclipse.osbp.ecview.jetty.port=8081
--Dorg.osgi.service.http.port=8080
+-Dorg.eclipse.osbp.ecview.jetty.port=9081
+-Dorg.osgi.service.http.port=9080
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
 
    <launcher>
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
