@@ -9,6 +9,11 @@
 ******************************************************************************/
 package com.mycorp.examples.student.remoteservice.host;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -24,8 +29,12 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.osgi.service.component.annotations.Component;
 
 import com.mycorp.examples.student.Address;
@@ -129,4 +138,48 @@ public class StudentServiceImpl implements StudentService {
 	public Student deleteStudent(@PathParam("studentId") String studentId) {
 		return students.remove(studentId);
 	}
+	
+	@POST
+	@Path("/upload/{student}")
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	public Response uploadSomething(@FormDataParam("file") InputStream uploadedInputStream,
+			@FormDataParam("file") FormDataContentDisposition fileDetail
+			,@PathParam("student")  String studentname
+			) throws Exception  {
+
+	    String UPLOAD_PATH = "c:/temp/"+studentname;
+	    try
+	    {
+	        int read = 0;
+	        byte[] bytes = new byte[1024];
+	 
+	        Student sFound = null;
+	        for( Student s:students.values() ) {
+	        	if ( s.getName().equals(studentname) ) {
+	        		sFound = s;
+	        		break;
+	        	}
+	        }
+	        
+	        if ( sFound == null )
+	        	throw new WebApplicationException("Student not found. Please try again !!");
+	        
+		    File target = new File(UPLOAD_PATH);
+		    target.mkdirs();
+	        OutputStream out = new FileOutputStream(new File(target,fileDetail.getFileName().replaceAll(":", "_")));
+	        while ((read = uploadedInputStream.read(bytes)) != -1)
+	        {
+	            out.write(bytes, 0, read);
+	        }
+	        out.flush();
+	        out.close();
+	    } catch (IOException e)
+	    {
+	        throw new WebApplicationException("Error while uploading file. Please try again !!");
+	    }
+	    return Response.ok("Data uploaded successfully !!").build();
+
+	}
+	
+	
 }

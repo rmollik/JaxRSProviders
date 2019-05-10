@@ -22,6 +22,7 @@ import org.eclipse.ecf.core.IContainer;
 import org.eclipse.ecf.provider.jaxrs.JaxRSNamespace;
 import org.eclipse.ecf.provider.jaxrs.server.JaxRSServerContainerInstantiator;
 import org.eclipse.ecf.provider.jaxrs.server.JaxRSServerDistributionProvider;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.osgi.framework.BundleContext;
 
@@ -41,6 +42,7 @@ public class JerseyServerDistributionProvider extends JaxRSServerDistributionPro
 					Configuration configuration) throws ContainerCreateException {
 				URI uri = getUri(parameters, JERSEY_SERVER_CONFIG);
 				checkOSGIIntents(description, uri, parameters);
+				((ResourceConfig)configuration).register(MultiPartFeature.class);
 				return new JerseyServerContainer(createJaxRSID(uri), context, (ResourceConfig) configuration,
 						getJacksonPriority(parameters), getParameterValue(parameters, BINDING_PRIORITY, Integer.class,
 								JerseyServerContainer.BINDING_DEFAULT_PRIORITY));
@@ -68,6 +70,6 @@ public class JerseyServerDistributionProvider extends JaxRSServerDistributionPro
 	@SuppressWarnings("rawtypes")
 	@Override
 	protected Configurable createConfigurable() {
-		return new ResourceConfig();
+		return new ResourceConfig().register(MultiPartFeature.class);
 	}
 }

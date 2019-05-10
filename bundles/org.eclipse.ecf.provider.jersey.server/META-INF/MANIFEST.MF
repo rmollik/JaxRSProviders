@@ -40,7 +40,8 @@ Import-Package: com.fasterxml.jackson.core;version="2.6.2",
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.ecf,
  org.eclipse.equinox.common,
- org.eclipse.ecf.identity
+ org.eclipse.ecf.identity,
+ org.glassfish.jersey.media.jersey-media-multipart;bundle-version="2.28.0"
 Provide-Capability: osgi.remoteserviceadmin.distribution; configs:List<String>="ecf.jaxrs.jersey.server"; version:Version=1.0
 Export-Package: org.eclipse.ecf.provider.jersey.server;version="1.0.0"
 Bundle-Activator: org.eclipse.ecf.provider.internal.jersey.server.Activator
